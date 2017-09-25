@@ -2,7 +2,7 @@
 Cookiecutter PyPkg
 ==================
 
-A `Cookiecutter`_ Python package template.
+A setup.cfg based `Cookiecutter`_ Python package template.
 
 Quickstart
 ----------
