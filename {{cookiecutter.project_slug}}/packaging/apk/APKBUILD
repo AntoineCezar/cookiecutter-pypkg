@@ -1,0 +1,47 @@
+# Contributor: {{ cookiecutter.author }} <{{ cookiecutter.email }}>
+# Maintainer: {{ cookiecutter.author }} <{{ cookiecutter.email }}>
+pkgname=py-{{ cookiecutter.project_slug }}
+pkgver={{ cookiecutter.version }}
+pkgrel=0
+pkgdesc="{{ cookiecutter.project_short_description }}"
+url="{{ cookiecutter.project_url }}"
+arch="noarch"
+license="{{ cookiecutter.license }}"
+depends="python"
+makedepends='python2-dev python3-dev py-setuptools'
+install=""
+subpackages="py2-${pkgname#py-}:_py2 py3-${pkgname#py-}:_py3"
+source="${pkgname}-${pkgver}.tar.gz::{{ cookiecutter.project_sources_url }}/$pkgver.tar.gz"
+builddir="$srcdir/"
+
+build() {
+    cd "$builddir"
+    python2 setup.py build || return 1
+    python3 setup.py build || return 1
+}
+
+package() {
+    cd "$builddir"
+    python setup.py install --prefix=/usr --root="$pkgdir" --skip-build
+}
+
+_py2() {
+    replaces="$pkgname"
+    depends="${depends//py-/py2-}"
+    _py python2
+}
+
+_py3() {
+    depends="${depends//py-/py3-}"
+    _py python3
+}
+
+_py() {
+    local python="$1"
+    pkgdesc="$pkgdesc (for $python)"
+    depends="$depends $python"
+    install_if="$pkgname=$pkgver-r$pkgrel $python"
+
+    cd "$builddir"
+    $python setup.py install --prefix=/usr --root="$subpkgdir"
+}
