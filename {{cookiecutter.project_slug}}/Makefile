@@ -1,10 +1,10 @@
-.PHONY: help test typecheck clean clean-test clean-pyc clean-build
+.PHONY: help test typecheck docs clean clean-test clean-pyc clean-build
 .DEFAULT_GOAL := help
 
 PACKAGE_NAME = {{ cookiecutter.package_name }}
 
 VIRTUALENV ?= python -m venv
-VIRTUAL_ENV ?= .venv
+VIRTUAL_ENV ?= $(PWD)/.venv
 PYTHON ?= $(VIRTUAL_ENV)/bin/python
 PIP ?= $(VIRTUAL_ENV)/bin/pip
 BROWSER ?= firefox
@@ -78,6 +78,16 @@ coverage-html:
 	$(PYTHON) -m coverage run -m unittest
 	$(PYTHON) -m coverage html
 	$(BROWSER) htmlcov/index.html
+
+docs:
+	@## generate Sphinx HTML documentation, including API docs
+	rm -f docs/{{ cookiecutter.project_slug }}.rst
+	rm -f docs/modules.rst
+	mkdir -p docs/_static
+	$(PYTHON) -m sphinx.apidoc -o docs/ {{ cookiecutter.package_name }}
+	$(MAKE) -C docs clean PYTHON=$(PYTHON)
+	$(MAKE) -C docs html PYTHON=$(PYTHON)
+	$(BROWSER) docs/_build/html/index.html
 
 dist: clean
 	@## build source and wheel package
