@@ -70,9 +70,6 @@ $ git checkout -b bugfix-or-feature-or-doc/name-of-your-bugfix-or-feature-or-doc
 
 7. Submit a pull request through the GitHub website.
 
-Also you can use a tool like [git-pull-request](https://github.com/jd/git-pull-request) 
-(created by [Julien Danjou](https://julien.danjou.info/blog/2017/git-pull-request-command-line-tool)) for simplify the job.
-
 ## Pull Request Guidelines
 
 Before you submit a pull request, check that it meets these guidelines:
