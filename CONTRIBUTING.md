@@ -80,4 +80,3 @@ Before you submit a pull request, check that it meets these guidelines:
 1. The pull request should include tests.
 2. If the pull request adds functionality, the docs should be updated. Add the
    feature to the list in README.md.
-3. The pull request should be mergeable and docker image should be buildable.
