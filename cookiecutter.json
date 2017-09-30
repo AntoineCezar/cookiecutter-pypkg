@@ -11,5 +11,9 @@
       "BSD license",
       "MIT license",
       "None"
+  ],
+  "test_runner": [
+      "unittest",
+      "pytest"
   ]
 }

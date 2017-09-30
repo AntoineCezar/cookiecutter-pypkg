@@ -57,7 +57,7 @@ develop: $(PYTHON)
 
 test:
 	@## run tests quickly with the default Python
-	$(PYTHON) -m unittest
+	$(PYTHON) -m {{ cookiecutter.test_runner }}
 
 typecheck:
 	@## check types with mypy
@@ -69,13 +69,13 @@ lint:
 
 coverage:
 	@## show coverage in the console
-	$(PYTHON) -m coverage run -m unittest
+	$(PYTHON) -m coverage run -m {{ cookiecutter.test_runner }}
 	$(PYTHON) -m coverage report -m
 
 coverage-html:
 	@## show coverage in the browser
 	@## uses $BROWSER if present
-	$(PYTHON) -m coverage run -m unittest
+	$(PYTHON) -m coverage run -m {{ cookiecutter.test_runner }}
 	$(PYTHON) -m coverage html
 	$(BROWSER) htmlcov/index.html
 

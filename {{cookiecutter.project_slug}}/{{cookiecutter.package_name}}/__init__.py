@@ -1,5 +1,3 @@
-import pkg_resources
-
 from .greet import greet
 
 
