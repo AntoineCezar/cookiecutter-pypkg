@@ -16,5 +16,6 @@
   "test_runner": [
       "unittest",
       "pytest"
-  ]
+  ],
+  "build_rpm": "n"
 }
