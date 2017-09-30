@@ -19,12 +19,12 @@ If you are reporting a bug, please include:
 
 ### Fix Bugs
 
-Look through the gitlab issues for bugs. Anything tagged with "bug"
-and "help wanted" is open to whoever wants to implement it.
+Look through the GitHub issues for bugs. Anything tagged with "bug"
+and "help wanted" is open to whoever wants to fix it.
 
 ### Implement Features
 
-Look through the gitlab issues for features. Anything tagged with "enhancement"
+Look through the GitHub issues for features. Anything tagged with "enhancement"
 and "help wanted" is open to whoever wants to implement it.
 
 ### Write Documentation
@@ -48,7 +48,7 @@ If you are proposing a feature:
 
 Ready to contribute? Here's how to set up cookiecutter-pypkg for local development.
 
-1. Fork the cookiecutter-pypkg repo on gitlab.
+1. Fork the cookiecutter-pypkg repo on GitHub.
 2. Clone your fork locally:
 ```shell
 $ git clone git@github.com:your_name_here/cookiecutter-pypkg.git
@@ -68,7 +68,7 @@ $ git checkout -b bugfix-or-feature-or-doc/name-of-your-bugfix-or-feature-or-doc
     $ git push origin name-of-your-bugfix-or-feature
 ```
 
-7. Submit a pull request through the gitlab website.
+7. Submit a pull request through the GitHub website.
 
 Also you can use a tool like [git-pull-request](https://github.com/jd/git-pull-request) 
 (created by [Julien Danjou](https://julien.danjou.info/blog/2017/git-pull-request-command-line-tool)) for simplify the job.
