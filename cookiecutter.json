@@ -6,6 +6,7 @@
   "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
   "project_url": "https://domain.tld",
   "project_short_description": "Project short description.",
+  "project_description": "Project detailed description.",
   "version": "0.1.0",
   "license": [
       "BSD license",
@@ -15,5 +16,10 @@
   "test_runner": [
       "unittest",
       "pytest"
+  ],
+  "rpm_packaging": [
+      "None",
+      "Using setuptools",
+      "Using a spec file"
   ]
 }
