@@ -2,7 +2,7 @@
 {{ cookiecutter.project_name }}
 {{ cookiecutter.project_name | count * '=' }}
 
-v{{ cookiecutter.version}}
+v{{ cookiecutter.version }}
 {{ cookiecutter.project_short_description }}
 
 Installation
