@@ -5,6 +5,7 @@
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('-', '-') }}",
   "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
   "project_url": "https://domain.tld",
+  "project_sources_url": "https://domain.tld",
   "project_short_description": "Project short description.",
   "version": "0.1.0",
   "license": [
@@ -15,5 +16,6 @@
   "test_runner": [
       "unittest",
       "pytest"
-  ]
+  ],
+  "build_rpm": "n"
 }

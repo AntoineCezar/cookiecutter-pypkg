@@ -54,8 +54,9 @@ Ready to contribute? Here's how to set up cookiecutter-pypkg for local developme
 $ git clone git@github.com:your_name_here/cookiecutter-pypkg.git
 ```
 
-4. Create a branch for local development:
+4. Create a branch for local development from the develop branch:
 ```shell
+$ git checkout develop
 $ git checkout -b bugfix-or-feature-or-doc/name-of-your-bugfix-or-feature-or-doc
 ```
 
@@ -68,7 +69,7 @@ $ git checkout -b bugfix-or-feature-or-doc/name-of-your-bugfix-or-feature-or-doc
     $ git push origin name-of-your-bugfix-or-feature
 ```
 
-7. Submit a pull request through the GitHub website.
+7. Submit a pull request through the GitHub website to the develop branch.
 
 ## Pull Request Guidelines
 
