@@ -1,0 +1,29 @@
+####################
+# Python artifacts #
+####################
+*.pyc
+*.pyo
+__pycache__
+
+###################
+# Build artifacts #
+###################
+*.egg-info
+*.egg
+
+##################
+# Test artifacts #
+##################
+.cache  # pytest
+.mypy_cache
+
+######################
+# Coverage artifacts #
+######################
+.coverage
+htmlcov/
+
+##############
+# Virtualenv #
+##############
+.venv
