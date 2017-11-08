@@ -14,8 +14,10 @@ __pycache__
 ##################
 # Test artifacts #
 ##################
-.cache  # pytest
 .mypy_cache
+{% if cookiecutter.test_runner == 'pytest' %}
+.pytest_cache
+{% endif %}
 
 ######################
 # Coverage artifacts #
