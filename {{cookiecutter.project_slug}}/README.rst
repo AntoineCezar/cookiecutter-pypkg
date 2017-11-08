@@ -37,6 +37,18 @@ For development use:
     $ cd /path/to/{{ cookiecutter.project_slug }}
     $ $VENV/bin/pip install -e . ".[develop]" ".[testing]"
 
+A convenient Makefile is provided to ease development:
+
+.. code:: sh
+
+    $ make develop
+
+For more useful commands run:
+
+.. code:: sh
+
+    $ make help
+
 On a Windows System
 ~~~~~~~~~~~~~~~~~~~
 
