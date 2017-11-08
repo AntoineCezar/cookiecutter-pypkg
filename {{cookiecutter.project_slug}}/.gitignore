@@ -1,0 +1,31 @@
+####################
+# Python artifacts #
+####################
+*.pyc
+*.pyo
+__pycache__
+
+###################
+# Build artifacts #
+###################
+*.egg-info
+*.egg
+
+##################
+# Test artifacts #
+##################
+.mypy_cache
+{% if cookiecutter.test_runner == 'pytest' %}
+.pytest_cache
+{% endif %}
+
+######################
+# Coverage artifacts #
+######################
+.coverage
+htmlcov/
+
+##############
+# Virtualenv #
+##############
+.venv

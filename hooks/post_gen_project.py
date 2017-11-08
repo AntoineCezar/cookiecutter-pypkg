@@ -26,6 +26,15 @@ def remove_dir(path):
         remove_dir(parent)
 
 
+def remove_file(path):
+    path = os.path.join(PROJECT_DIRECTORY, path)
+
+    os.unlink(path)
+
+
 if __name__ == '__main__':
-    if 'n' == '{{ cookiecutter.build_rpm }}':
+    if '{{ cookiecutter.build_rpm }}' == 'n':
         remove_dir('packaging/rpm')
+
+    if '{{ cookiecutter.test_runner }}' != 'pytest':
+        remove_file('pytest.ini')
