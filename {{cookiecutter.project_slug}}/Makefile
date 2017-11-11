@@ -79,6 +79,17 @@ coverage-html:
 	$(PYTHON) -m coverage html
 	$(BROWSER) htmlcov/index.html
 
+watch: COMMAND = $(MAKE) $(filter-out watch, $(MAKECMDGOALS))
+watch:
+	@## Run make on source changes
+	@## Exemple: 'make watch test' will run make test on source changes
+	@ $(COMMAND) || exit 0
+	@ $(PYTHON) -m watchdog.watchmedo \
+	     shell-command --patterns='*.py' \
+	                   --recursive \
+	                   --wait \
+	                   --command='$(COMMAND)'
+
 docs:
 	@## generate Sphinx HTML documentation, including API docs
 	rm -f docs/{{ cookiecutter.project_slug }}.rst
