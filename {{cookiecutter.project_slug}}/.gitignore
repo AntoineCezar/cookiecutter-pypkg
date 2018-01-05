@@ -25,6 +25,11 @@ __pycache__
 .coverage
 htmlcov/
 
+##################
+# Docs artifacts #
+##################
+docs/_build
+
 ##############
 # Virtualenv #
 ##############
