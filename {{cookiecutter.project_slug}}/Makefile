@@ -9,41 +9,9 @@ PYTHON ?= $(VIRTUAL_ENV)/bin/python
 PIP ?= $(VIRTUAL_ENV)/bin/pip
 BROWSER ?= firefox
 
-define PRINT_HELP_PYSCRIPT
-import re, sys
-
-data = []
-target = ''
-help = []
-for line in sys.stdin:
-	match = re.match(r'^([a-zA-Z_-]+):', line)
-	if match and target and help:
-		data.append((target, help))
-	if match:
-		target = match.group(1)
-		help = []
-		continue
-
-	match = re.match(r'^\t+@## *(.+) *', line)
-	if match:
-		help.append(match.group(1))
-
-if target and help:
-	data.append((target, help))
-col_widht = max([len(t) for t, h in data])
-template = "  %-{}s  %s".format(col_widht)
-
-for target, help in data:
-	print(template % (target, help[0]))
-	for line in help[1:]:
-		print(template % ('', line))
-	print('')
-endef
-export PRINT_HELP_PYSCRIPT
-
 
 help:
-	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
+	@python make_help.py < $(MAKEFILE_LIST)
 
 $(PYTHON):
 	$(VIRTUALENV) $(VIRTUAL_ENV)
