@@ -60,10 +60,8 @@ watch:
 
 docs:
 	@## generate Sphinx HTML documentation, including API docs
-	rm -f docs/{{ cookiecutter.project_slug }}.rst
-	rm -f docs/modules.rst
 	mkdir -p docs/_static
-	$(PYTHON) -m sphinx.apidoc -o docs/ {{ cookiecutter.package_name }}
+	$(PYTHON) -m sphinx.apidoc --force -o docs/ {{ cookiecutter.package_name }}
 	$(MAKE) -C docs clean PYTHON=$(PYTHON)
 	$(MAKE) -C docs html PYTHON=$(PYTHON)
 	$(BROWSER) docs/_build/html/index.html
