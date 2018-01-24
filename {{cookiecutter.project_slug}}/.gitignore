@@ -29,6 +29,8 @@ htmlcov/
 # Docs artifacts #
 ##################
 docs/_build
+docs/modules.rst
+docs/{{ cookiecutter.project_slug }}.*
 
 ##############
 # Virtualenv #
