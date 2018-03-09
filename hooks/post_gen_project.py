@@ -33,6 +33,9 @@ def remove_file(path):
 
 
 if __name__ == '__main__':
+    if '{{ cookiecutter.build_docs }}' != 'y':
+        remove_dir('docs')
+
     if '{{ cookiecutter.build_rpm }}' == 'n':
         remove_dir('packaging/rpm')
 

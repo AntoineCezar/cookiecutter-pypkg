@@ -1,4 +1,5 @@
-.PHONY: help test typecheck docs clean clean-test clean-pyc clean-build
+.PHONY: help test typecheck {% if cookiecutter.build_docs == 'y' %}docs {% endif %}clean clean-test clean-pyc clean-build
+
 .DEFAULT_GOAL := help
 
 PACKAGE_NAME = {{ cookiecutter.package_name }}
@@ -58,6 +59,7 @@ watch:
 	                   --wait \
 	                   --command='$(COMMAND)'
 
+{% if cookiecutter.build_docs == 'y' -%}
 docs:
 	@## generate Sphinx HTML documentation, including API docs
 	mkdir -p docs/_static
@@ -66,6 +68,7 @@ docs:
 	$(MAKE) -C docs html PYTHON=$(PYTHON)
 	$(BROWSER) docs/_build/html/index.html
 
+{% endif -%}
 dist: clean
 	@## build source and wheel package
 	python setup.py sdist

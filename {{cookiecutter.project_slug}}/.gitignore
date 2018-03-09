@@ -25,6 +25,7 @@ __pycache__
 .coverage
 htmlcov/
 
+{% if cookiecutter.build_docs == 'y' -%}
 ##################
 # Docs artifacts #
 ##################
@@ -32,6 +33,7 @@ docs/_build
 docs/modules.rst
 docs/{{ cookiecutter.project_slug }}.*
 
+{% endif %}
 ##############
 # Virtualenv #
 ##############
