@@ -41,3 +41,7 @@ if __name__ == '__main__':
 
     if '{{ cookiecutter.test_runner }}' != 'pytest':
         remove_file('pytest.ini')
+
+    if '{{ cookiecutter.exemple }}' == 'n':
+        remove_file('{{cookiecutter.package_name}}/greet.py')
+        remove_file('tests/test_greet.py')
