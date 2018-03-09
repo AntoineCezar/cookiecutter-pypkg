@@ -97,6 +97,6 @@ clean-test:
 	rm -f .coverage
 	rm -fr htmlcov/
 	rm -fr .mypy_cache
-{% if cookiecutter.test_runner == 'pytest' %}
+{% if cookiecutter.test_runner == 'pytest' -%}
 	rm -fr .pytest_cache
-{% endif %}
+{% endif -%}
