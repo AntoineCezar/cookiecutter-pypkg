@@ -11,7 +11,7 @@ BuildRequires:  python2-devel python3-devel
 AutoReq:        0
 Requires:       python
 URL:            {{ cookiecutter.project_url }}
-Source0:        {{ cookiecutter.project_sources_url }}/%{srcname}-%{version}.tar.gz
+Source0:        {{ cookiecutter.rpm_sources_url }}/%{srcname}-%{version}.tar.gz
 # Turn off the brp-python-bytecompile script
 # We don't want to generate bytecode from python and pyo/pyc files
 %global __os_install_post %(echo '%{__os_install_post}' | sed -e 's!/usr/lib[^[:space:]]*/brp-python-bytecompile[[:space:]].*$!!g')
