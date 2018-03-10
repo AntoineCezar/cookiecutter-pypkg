@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 import re
 import sys
 
@@ -84,9 +85,10 @@ class HelpDirector:
 
 
 def main():
+    makefile = os.path.join(os.path.dirname(__file__), 'Makefile')
     builder = HelpBuilder()
     director = HelpDirector(builder)
-    director = director.build(sys.stdin)
+    director = director.build(open(makefile, 'r'))
     builder.get_result(sys.stdout)
 
 

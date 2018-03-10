@@ -12,7 +12,7 @@ BROWSER ?= firefox
 
 
 help:
-	@python make_help.py < $(MAKEFILE_LIST)
+	@python make_help.py
 
 $(PYTHON):
 	$(VIRTUALENV) $(VIRTUAL_ENV)
