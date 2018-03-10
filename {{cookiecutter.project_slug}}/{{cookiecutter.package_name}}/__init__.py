@@ -1,13 +1,16 @@
+import os
 {%- if cookiecutter.exemple == 'y' %}
+
 from .greet import greet
+{%- endif %}
 
 
-{% endif -%}
-__version__ = '{{ cookiecutter.version }}'
+__version_file__ = os.path.join(os.path.dirname(__file__), 'VERSION')
+__version__ = open(version_file, 'r').read().strip()
 {%- if cookiecutter.exemple == 'y' %}
 
 
 __all__ = [
     'greet'
 ]
-{% endif -%}
+{%- endif %}

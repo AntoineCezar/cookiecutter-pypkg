@@ -1,6 +1,7 @@
 include HISTORY.rst
 include LICENSE
 include README.rst
+include {{ cookiecutter.package_name }}/VERSION
 
 recursive-exclude tests
 recursive-exclude * __pycache__
