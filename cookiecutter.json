@@ -19,5 +19,6 @@
   "build_docs": "y",
   "build_rpm": "n",
   "rpm_sources_url": "https://domain.tld",
-  "exemple": "n"
+  "exemple": "n",
+  "git_init": "y"
 }

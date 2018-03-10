@@ -2,6 +2,7 @@
 import os
 import shutil
 import stat
+import subprocess
 
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
@@ -45,3 +46,6 @@ if __name__ == '__main__':
     if '{{ cookiecutter.exemple }}' == 'n':
         remove_file('{{cookiecutter.package_name}}/greet.py')
         remove_file('tests/test_greet.py')
+
+    if '{{ cookiecutter.git_init }}' == 'y':
+        subprocess.call(['git', 'init', PROJECT_DIRECTORY])
