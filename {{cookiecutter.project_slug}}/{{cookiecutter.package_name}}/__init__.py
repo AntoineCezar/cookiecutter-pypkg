@@ -1,12 +1,11 @@
-import os
+import pathlib
 {%- if cookiecutter.exemple == 'y' %}
 
 from .greet import greet
 {%- endif %}
 
 
-__version_file__ = os.path.join(os.path.dirname(__file__), 'VERSION')
-__version__ = open(__version_file__, 'r').read().strip()
+__version__ = (pathlib.Path(__file__).parent / 'VERSION').read_text().strip()
 {%- if cookiecutter.exemple == 'y' %}
 
 

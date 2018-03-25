@@ -13,10 +13,8 @@ version = file: {{ cookiecutter.package_name }}.VERSION
 
 and delete this file if it works with newer version of setuptools.
 """
-import os
+import pathlib
 
-version_file = os.path.join(
-    os.path.dirname(__file__),
-    '{{ cookiecutter.package_name }}', 'VERSION'
-)
-version = open(version_file, 'r').read().strip()
+package = pathlib.Path(__file__).parent / '{{ cookiecutter.package_name }}'
+version_file = package / 'VERSION'
+version = version_file.read_text().strip()
