@@ -33,6 +33,10 @@ def remove_file(path):
     os.unlink(path)
 
 
+def git(*args):
+    subprocess.call(['git'] + args, cwd=PROJECT_DIRECTORY)
+
+
 if __name__ == '__main__':
     if '{{ cookiecutter.build_docs }}' != 'y':
         remove_dir('docs')
@@ -48,4 +52,6 @@ if __name__ == '__main__':
         remove_file('tests/test_greet.py')
 
     if '{{ cookiecutter.git_init }}' == 'y':
-        subprocess.call(['git', 'init', PROJECT_DIRECTORY])
+        git('init', '.')
+        git('add', '.')
+        git('commit', '-m', 'Create project')
