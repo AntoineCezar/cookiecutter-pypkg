@@ -6,7 +6,7 @@ from .greet import greet
 
 
 __version_file__ = os.path.join(os.path.dirname(__file__), 'VERSION')
-__version__ = open(version_file, 'r').read().strip()
+__version__ = open(__version_file__, 'r').read().strip()
 {%- if cookiecutter.exemple == 'y' %}
 
 
