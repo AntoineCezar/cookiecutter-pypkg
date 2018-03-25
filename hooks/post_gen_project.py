@@ -34,7 +34,7 @@ def remove_file(path):
 
 
 def git(*args):
-    subprocess.call(['git'] + args, cwd=PROJECT_DIRECTORY)
+    subprocess.call(['git'] + list(args), cwd=PROJECT_DIRECTORY)
 
 
 if __name__ == '__main__':
