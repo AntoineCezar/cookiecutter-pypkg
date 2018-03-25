@@ -20,7 +20,7 @@ def parse_args():
 
 def main():
     args = parse_args()
-    {% if cookiecutter.exemple != 'n' -%}
+    {%- if cookiecutter.exemple != 'n' %}
     greet(args.name)
     {%- endif %}
 
