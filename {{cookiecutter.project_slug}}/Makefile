@@ -71,8 +71,8 @@ docs:
 {% endif -%}
 dist: clean
 	@## build source and wheel package
-	python setup.py sdist
-	python setup.py bdist_wheel
+	$(PYTHON) setup.py sdist
+	$(PYTHON) setup.py bdist_wheel
 	ls -l dist
 
 clean: clean-build clean-pyc clean-test
